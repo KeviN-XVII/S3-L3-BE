@@ -5,6 +5,7 @@
     <persistence-unit name="s3l3bepu">
 
         <!-- TODO: Aggiungi elenco delle entities -->
+        <class>KevinQuarta.entities.Evento</class>
 
 
         <properties>
