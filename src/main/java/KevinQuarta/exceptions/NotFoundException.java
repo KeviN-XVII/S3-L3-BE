@@ -1,0 +1,7 @@
+package KevinQuarta.exceptions;
+
+public class NotFoundException extends RuntimeException {
+    public NotFoundException(long id) {
+        super("L'Evento " + id + "non è stato trovato");
+    }
+}
