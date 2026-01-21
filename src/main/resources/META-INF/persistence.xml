@@ -6,6 +6,7 @@
 
         <!-- TODO: Aggiungi elenco delle entities -->
         <class>KevinQuarta.entities.Evento</class>
+        <class>KevinQuarta.entities.Persona</class>
 
 
         <properties>

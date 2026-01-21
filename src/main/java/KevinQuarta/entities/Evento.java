@@ -3,6 +3,7 @@ package KevinQuarta.entities;
 import jakarta.persistence.*;
 
 import java.time.LocalDate;
+import java.util.List;
 
 @Entity
 // Annotazione obbligatoria. Ci serve per definire che questa classe dovrà venir mappata ad una specifica tabella nel DB
@@ -44,6 +45,12 @@ public class Evento {
     //   6 NUMERO MASSIMO PARTECIPANTI
     @Column(name="partecipanti_evento_max",nullable = false)
     private int numMaxParticipanti;
+
+
+
+//    1 to Many partecipazione
+    @OneToMany(mappedBy = "event")
+    private List<Partecipazione> partecipazioni;
 
 
 
