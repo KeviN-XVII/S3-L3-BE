@@ -7,10 +7,11 @@
         <!-- TODO: Aggiungi elenco delle entities -->
         <class>KevinQuarta.entities.Evento</class>
         <class>KevinQuarta.entities.Persona</class>
-
+        <class>KevinQuarta.entities.Partecipazione</class>
+        <class>KevinQuarta.entities.Location</class>
 
         <properties>
-            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/s3l3be"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/s3l4"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
             <property name="jakarta.persistence.jdbc.password" value="1234"/>
             <property name="jakarta.persistence.jdbc.driver" value="org.postgresql.Driver"/>

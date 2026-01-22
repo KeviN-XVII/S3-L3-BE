@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.List;
+import java.util.UUID;
 
 @Entity
 // Annotazione obbligatoria. Ci serve per definire che questa classe dovrà venir mappata ad una specifica tabella nel DB
@@ -11,13 +12,14 @@ import java.util.List;
 // se utilizziamo l'impostazione <property name="hibernate.hbm2ddl.auto" value="update"/> nel persistence.xml
 // N.B. Non dobbiamo inoltre dimenticare di dichiarare questa classe dentro il persistence.xml <class>KevinQuarta.entities.Evento</class>
 @Table(name="events")
-public class Evento {
+@Inheritance(strategy=InheritanceType.JOINED)
+public abstract class Evento {
 
     //    1 ID
     @Id //Dichiaro che questo attributo dovrà corrispondere alla colonna PRIMARY KEY della tabella events
     @GeneratedValue (strategy = GenerationType.IDENTITY) // Annotazione OPZIONALE però molto consigliata. Serve per chiedere al DB di generare lui
     // i valori per la PK. IDENTITY significa che invece di biginteger vogliamo usare un bigserial
-    private long id;
+    private UUID id;
 
 
     //   2 TITOLO
@@ -52,7 +54,11 @@ public class Evento {
     @OneToMany(mappedBy = "event")
     private List<Partecipazione> partecipazioni;
 
+//   Many to One Location
 
+//    @ManyToOne
+//    @JoinColumn (name="location_id",nullable = false)
+//    private Location location;
 
     public Evento() {
         // OBBLIGATORIO PER TUTTE LE ENTITIES AVERE UN COSTRUTTORE VUOTO! Viene usato da JPA per costruire degli oggetti quando
@@ -107,6 +113,11 @@ public class Evento {
     public void setNumMaxParticipanti(int numMaxParticipanti) {
         this.numMaxParticipanti = numMaxParticipanti;
     }
+
+    public List<Partecipazione> getPartecipazioni() {
+        return partecipazioni;
+    }
+
 
     @Override
     public String toString() {

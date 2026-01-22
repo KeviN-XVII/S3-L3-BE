@@ -14,6 +14,7 @@ public class Partecipazione {
     private UUID Id;
 
     @Column(name="stato")
+    @Enumerated(EnumType.STRING)
     private Stato stato;
 
 
@@ -36,4 +37,33 @@ public class Partecipazione {
 
     }
 
+    public UUID getId() {
+        return Id;
+    }
+
+    public Stato getStato() {
+        return stato;
+    }
+
+    public void setStato(Stato stato) {
+        this.stato = stato;
+    }
+
+    public Persona getPartecipante() {
+        return partecipante;
+    }
+
+    public Evento getEvent() {
+        return event;
+    }
+
+    @Override
+    public String toString() {
+        return "Partecipazione{" +
+                "Id=" + Id +
+                ", stato=" + stato +
+                ", partecipante=" + partecipante +
+                ", event=" + event +
+                '}';
+    }
 }

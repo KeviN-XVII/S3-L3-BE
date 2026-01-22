@@ -61,6 +61,11 @@ public class Persona {
         return id;
     }
 
+
+    private List<Partecipazione> getPartecipazioni() {
+        return partecipazioni;
+    }
+
     public String getNome() {
         return nome;
     }
