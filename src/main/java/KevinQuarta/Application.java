@@ -1,9 +1,7 @@
 package KevinQuarta;
 
 import KevinQuarta.dao.EventsDAO;
-import KevinQuarta.entities.EventType;
-import KevinQuarta.entities.Evento;
-import KevinQuarta.entities.PartitaDiCalcio;
+import KevinQuarta.entities.*;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -20,11 +18,18 @@ public class Application {
         EntityManager em = emf.createEntityManager();
         EventsDAO dao = new EventsDAO(em);
 
+//        PARTITE DI CALCIO
         PartitaDiCalcio JuveVSNapoli = new PartitaDiCalcio("Juventus vs Napoli",LocalDate.of(2026,01,25),"Partita di Serie A",EventType.PUBBLICO,10200,"Juventus","Napoli",4,1);
         PartitaDiCalcio RomaVSMilan = new PartitaDiCalcio("Roma vs Milan",LocalDate.of(2026,01,25),"Partita di Serie A",EventType.PUBBLICO,15200,"Roma","Milan",2,2);
 
+
+//        CONCERTO
+        Concerto pupo = new Concerto("Pupo a San Siro",LocalDate.of(2026,07,17),"Pupo concerto",EventType.PUBBLICO,43000, ConcertoType.ROCK,true);
+
 //        dao.save(JuveVSNapoli);
 //        dao.save(RomaVSMilan);
+//        dao.save(pupo);
+
 
 
 
