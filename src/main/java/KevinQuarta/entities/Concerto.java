@@ -7,7 +7,7 @@ import java.time.LocalDate;
 @Entity
 @Table(name="concerto")
 public class Concerto extends Evento {
-    @Column(name="type",nullable = false)
+    @Column(name="type_concerto",nullable = false)
     @Enumerated(EnumType.STRING)
     private ConcertoType tipoConcerto;
 

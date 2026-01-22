@@ -1,9 +1,12 @@
 package KevinQuarta.dao;
 
+import KevinQuarta.entities.Concerto;
 import KevinQuarta.entities.Evento;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityTransaction;
+import jakarta.persistence.TypedQuery;
 
+import java.util.List;
 import java.util.UUID;
 
 
@@ -47,4 +50,12 @@ public class EventsDAO {
             System.out.println(e.getMessage());
         }
     }
+        public List<Concerto> getConcertiStreamingTrue(boolean streaming) {
+            TypedQuery<Concerto> query = em.createQuery(
+                    "SELECT c FROM Concerto c WHERE c.streaming = :streaming",
+                    Concerto.class
+            );
+            query.setParameter("streaming", streaming);
+        return query.getResultList();
+        }
 }

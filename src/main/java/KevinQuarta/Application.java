@@ -25,11 +25,14 @@ public class Application {
 
 //        CONCERTO
         Concerto pupo = new Concerto("Pupo a San Siro",LocalDate.of(2026,07,17),"Pupo concerto",EventType.PUBBLICO,43000, ConcertoType.ROCK,true);
+        Concerto pupoAVerona = new Concerto("Pupo a Verona",LocalDate.of(2026,07,17),"Pupo concerto",EventType.PUBBLICO,23000, ConcertoType.ROCK,false);
 
 //        dao.save(JuveVSNapoli);
 //        dao.save(RomaVSMilan);
 //        dao.save(pupo);
-
+//        dao.save(pupoAVerona);
+          dao.getConcertiStreamingTrue(true).forEach(Concerto-> System.out.println(Concerto));
+          dao.getConcertiStreamingTrue(false).forEach(Concerto-> System.out.println(Concerto));
 
 
 
