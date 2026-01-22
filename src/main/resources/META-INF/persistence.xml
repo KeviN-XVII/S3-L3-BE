@@ -9,6 +9,9 @@
         <class>KevinQuarta.entities.Persona</class>
         <class>KevinQuarta.entities.Partecipazione</class>
         <class>KevinQuarta.entities.Location</class>
+        <class>KevinQuarta.entities.PartitaDiCalcio</class>
+<!--        <class>KevinQuarta.entities.GaraDiAtletica</class>-->
+<!--        <class>KevinQuarta.entities.Concerto</class>-->
 
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/s3l4"/>

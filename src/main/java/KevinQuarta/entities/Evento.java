@@ -17,7 +17,7 @@ public abstract class Evento {
 
     //    1 ID
     @Id //Dichiaro che questo attributo dovrà corrispondere alla colonna PRIMARY KEY della tabella events
-    @GeneratedValue (strategy = GenerationType.IDENTITY) // Annotazione OPZIONALE però molto consigliata. Serve per chiedere al DB di generare lui
+    @GeneratedValue // Annotazione OPZIONALE però molto consigliata. Serve per chiedere al DB di generare lui
     // i valori per la PK. IDENTITY significa che invece di biginteger vogliamo usare un bigserial
     private UUID id;
 
